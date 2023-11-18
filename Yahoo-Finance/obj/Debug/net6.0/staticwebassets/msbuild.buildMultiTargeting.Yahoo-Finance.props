@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Yahoo-Finance.props" />
+</Project>
