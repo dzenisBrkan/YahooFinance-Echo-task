@@ -1,47 +1,100 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Yahoo_Finance</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/Yahoo_Finance.styles.css" asp-append-version="true" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Yahoo Finance</title>
+  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <div class="d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Finance" asp-action="Index">Finance</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+ <div class="wrapper-main">
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2023 - Yahoo_Finance - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <div class="sidebar">
+      
+      <!-- Sidebar user (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <img src="../../dist/img/246014_yahoo_icon.png" class="img-circle elevation-2" alt="User Image">
         </div>
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+        <div class="info">
+          <a href="#" class="d-block">Yahoo Finance</a>
+        </div>
+      </div>
+
+      <!-- SidebarSearch Form -->
+    @*   <div class="form-inline">
+        <div class="input-group" data-widget="sidebar-search">
+          <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+          <div class="input-group-append">
+            <button class="btn btn-sidebar">
+              <i class="fas fa-search fa-fw"></i>
+            </button>
+          </div>
+        </div>
+      </div> *@
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <li class="nav-item">
+            <a class="nav-link"  asp-area="" asp-controller="Finance" asp-action="Index">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Finance
+                <span class="right badge badge-danger">New</span>
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+                Home
+                <i class="fas fa-angle-left right"></i>
+                <span class="badge badge-info right">6</span>
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+                Privacy
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+  </aside>
+
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="card">
+       @*  <div class="card-header">
+          <h3 class="card-title">Title</h3>
+        </div> *@
+        <div class="card-body">
+            @RenderBody()
+        </div>
+       @*  <div class="card-footer">
+          <h3 class="card-title">Title</h3>
+        </div> *@
+      </div>
+    </section>
+  </div>
+  <!-- /.content-wrapper -->
+
+</div>
 </body>
 </html>
