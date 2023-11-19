@@ -1,4 +1,39 @@
-﻿@model Finance
+﻿@model IEnumerable<Finance>
+@{
+    ViewData["Title"] = "Index";
+}
 
 <h1>Yahoo Finance</h1>
-<h2>@Model.CompanyName</h2>
+
+<table class="table table-bordered table-sptriped" style="width:100%">
+    <thead>
+        <tr>
+            <th>CompanyName</th>
+            <th>MarketCap</th>
+            <th>YearFounded</th>
+            <th>Employees</th>
+            <th>City</th>
+            <th>State</th>
+            <th>DateAndTime</th>
+            <th>PreviusClosePrice</th>
+            <th>OpenPrice</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr width="50%">
+                <th>@item.CompanyName</th>
+                <th>@item.MarketCap</th>
+                <th>@item.YearFounded</th>
+                <th>@item.Employees</th>
+                <th>@item.City</th>
+                <th>@item.State</th>
+                <th>@item.DateAndTime</th>
+                <th>@item.PreviusClosePrice</th>
+                <th>@item.OpenPrice</th>
+            </tr>
+        }
+    </tbody>
+
+</table>

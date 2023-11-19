@@ -63,3 +63,7 @@ D:\Users\WindowsPro\source\repos\Yahoo-Finance\Yahoo-Finance\bin\Debug\net6.0\ru
 D:\Users\WindowsPro\source\repos\Yahoo-Finance\Yahoo-Finance\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
 D:\Users\WindowsPro\source\repos\Yahoo-Finance\Yahoo-Finance\obj\Debug\net6.0\Yahoo-Finance.csproj.AssemblyReference.cache
 D:\Users\WindowsPro\source\repos\Yahoo-Finance\Yahoo-Finance\obj\Debug\net6.0\Yahoo-Finance.csproj.CopyComplete
+D:\Users\WindowsPro\source\repos\Yahoo-Finance\Yahoo-Finance\bin\Debug\net6.0\RestSharp.dll
+D:\Users\WindowsPro\source\repos\Yahoo-Finance\Yahoo-Finance\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+D:\Users\WindowsPro\source\repos\Yahoo-Finance\Yahoo-Finance\bin\Debug\net6.0\System.Text.Json.dll
+D:\Users\WindowsPro\source\repos\Yahoo-Finance\Yahoo-Finance\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
