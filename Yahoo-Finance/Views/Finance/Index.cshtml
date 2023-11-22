@@ -3,7 +3,11 @@
     ViewData["Title"] = "Index";
 }
 
+<div class="d-flex justify-content-between">
 <h1>Yahoo Finance</h1>
+<a href="@Url.Action("Refresh","Finance")" class="btn btn-primary btn-lg">Refresh</a>
+</div>
+<br />
 
 <table class="table table-bordered table-sptriped" style="width:100%">
     <thead>

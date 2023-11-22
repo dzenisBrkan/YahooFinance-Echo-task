@@ -67,3 +67,4 @@ D:\Users\WindowsPro\source\repos\Yahoo-Finance\Yahoo-Finance\bin\Debug\net6.0\Re
 D:\Users\WindowsPro\source\repos\Yahoo-Finance\Yahoo-Finance\bin\Debug\net6.0\System.Text.Encodings.Web.dll
 D:\Users\WindowsPro\source\repos\Yahoo-Finance\Yahoo-Finance\bin\Debug\net6.0\System.Text.Json.dll
 D:\Users\WindowsPro\source\repos\Yahoo-Finance\Yahoo-Finance\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+D:\Users\WindowsPro\source\repos\Yahoo-Finance\Yahoo-Finance\bin\Debug\net6.0\Newtonsoft.Json.dll

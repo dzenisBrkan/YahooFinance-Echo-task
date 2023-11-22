@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "HjJeplDw+dDTkqNu4EvZZ/MEhZjbDEcYFpj16mTlXPxKsoER9Uf/bAdUfwfZWPWceaCq0vD+4CQUYZ0a2kR8yA==",
+  "dgSpecHash": "hPVUkN+V1IBU63f5DQyXWFXi41QRiYsvYvLGtmZM+tNU5IzlL7mfN8Y+Lgpx6MYc4xNkDPHB56M80tKfFUsjgA==",
   "success": true,
   "projectFilePath": "D:\\Users\\WindowsPro\\source\\repos\\Yahoo-Finance\\Yahoo-Finance\\Yahoo-Finance.csproj",
   "expectedPackageFiles": [
@@ -33,6 +33,7 @@
     "C:\\Users\\WindowsPro\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\WindowsPro\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\WindowsPro\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\WindowsPro\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\WindowsPro\\.nuget\\packages\\restsharp\\110.2.0\\restsharp.110.2.0.nupkg.sha512",
     "C:\\Users\\WindowsPro\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\WindowsPro\\.nuget\\packages\\system.configuration.configurationmanager\\4.7.0\\system.configuration.configurationmanager.4.7.0.nupkg.sha512",
