@@ -8,6 +8,19 @@
 <a href="@Url.Action("Refresh","Finance")" class="btn btn-primary btn-lg">Refresh</a>
 </div>
 <br />
+<div class="d-flex flex-column">
+    @if (TempData["Info"] != null)
+    {
+        <div class="alert alert-primary" role="alert">
+            <p><strong class="error">Success:</strong> @TempData["Info"].ToString()</p>
+            <script>
+                window.setTimeout(function () {
+                    location.href = "Finance";
+                }, 3000);
+            </script>
+        </div>
+    }
+</div>
 
 <table class="table table-bordered table-sptriped" style="width:100%">
     <thead>
