@@ -58,9 +58,9 @@ public class Finance : IFinance
                 Id = 0,
                 MarketCap = FinanceInformation.data.marketCap,
                 OpenPrice = FinanceInformation.data.currentPrice,
-                PreviusClosePrice = FinanceInformation.data.priceHint,
+                PreviusClosePrice = FinanceInformation.data.targetMedianPrice,
                 State = FinanceInformation.data.state,
-                YearFounded = 0
+                YearFounded = FinanceInformation.data.companyOfficers.FirstOrDefault().fiscalYear,
             };
 
             _context.Finances.Add(data);
