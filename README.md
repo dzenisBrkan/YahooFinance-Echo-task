@@ -4,6 +4,7 @@ Task 1 - Echo Company
 For this task, Yahoo-Finance APi was used.
 
 Site: https://rapidapi.com
+
 API: YFINANCE - Stock Market Data API from 
 
 Solution is Web Api based and there are few table in order to save data to database.
