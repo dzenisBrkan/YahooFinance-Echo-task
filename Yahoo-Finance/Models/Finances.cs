@@ -1,12 +1,14 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
 
 namespace Yahoo_Finance.Models;
 
-public class Finance
+public class Finances
 {
     [Key]
     public int Id { get; set; }
     public string CompanyName { get; set; }
+    public string? Ticker { get; set; }
     public long MarketCap { get; set; }
     public int YearFounded { get; set; }
     public int Employees { get; set; } //number of employees

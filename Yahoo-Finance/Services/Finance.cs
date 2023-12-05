@@ -36,12 +36,28 @@ public class Finance : IFinance
         request.AddParameter(FinanceApiInitializationData().contentType, "symbol=" + "AAPL", ParameterType.RequestBody);
 
         RestResponse response = client.Execute(request);
+
         var value = JsonConvert.DeserializeObject<StockInfo>(response.Content, new JsonSerializerSettings()
         {
             Error = (sender, error) => error.ErrorContext.Handled = true
         });
-
         return value;
+    }
+
+
+    public Root GetFinanceInformationTicker()
+    {
+        using (var clientNew = new HttpClient())
+        {
+            var endpoint = new Uri("\r\nhttps://query2.finance.yahoo.com/v1/finance/trending/US?count=5&useQuotes=true&fields=logoUrl%2CregularMarketChangePercent");
+            var result = clientNew.GetAsync(endpoint).Result;
+            var json = result.Content.ReadAsStringAsync().Result;
+            var value = JsonConvert.DeserializeObject<Root>(json.ToString(), new JsonSerializerSettings()
+            {
+                Error = (sender, error) => error.ErrorContext.Handled = true
+            });
+            return value;
+        }
     }
 
     public string AddFinanceInformation(StockInfo FinanceInformation)
@@ -49,7 +65,7 @@ public class Finance : IFinance
         var message = "Default message";
         try
         {
-            var data = new Yahoo_Finance.Models.Finance
+            var data = new Yahoo_Finance.Models.Finances
             {
                 City = FinanceInformation.data.city,
                 CompanyName = FinanceInformation.data.industry,
@@ -62,9 +78,45 @@ public class Finance : IFinance
                 State = FinanceInformation.data.state,
                 YearFounded = FinanceInformation.data.companyOfficers.FirstOrDefault().fiscalYear,
             };
-
             _context.Finances.Add(data);
             _context.SaveChanges();
+            message = "Data have been refreshed successfully.";
+        }
+        catch (Exception)
+        {
+            return message = "There was an eeror!";
+        }
+        return message;
+    }
+
+    public string AddFinanceInformationTicker(Root FinanceInformation)
+    {
+        var message = "Default message";
+        try
+        {
+            foreach (var item in FinanceInformation.finance.result)
+            {
+                foreach (var info in item.quotes)
+                {
+                    var data = new Yahoo_Finance.Models.Finances
+                    {
+                        Ticker = info.symbol,
+                        City = info.exchangeTimezoneShortName,
+                        CompanyName = info.fullExchangeName,
+                        DateAndTime = DateTime.Now,
+                        Employees = info.sourceInterval,
+                        Id = 0,
+                        MarketCap = info.priceHint,
+                        OpenPrice = info.regularMarketChangePercent,
+                        PreviusClosePrice = info.trendingScore,
+                        State = info.region,
+                        YearFounded = 0000,
+                    };
+                    _context.Finances.Add(data);
+                    _context.SaveChanges();
+                }
+              
+            }
             message = "Data have been refreshed successfully.";
         }
         catch (Exception)

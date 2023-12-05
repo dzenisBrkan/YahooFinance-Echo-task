@@ -6,4 +6,6 @@ public interface IFinance
 {
     StockInfo GetFinanceInformation();
     string AddFinanceInformation(StockInfo FinanceInformation);
+    public Root GetFinanceInformationTicker();
+    public string AddFinanceInformationTicker(Root FinanceInformation);
 }

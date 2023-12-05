@@ -1,13 +1,22 @@
-﻿@model IEnumerable<Finance>
+﻿@model IEnumerable<Finances>
 @{
     ViewData["Title"] = "Index";
 }
 
 <div class="d-flex justify-content-between">
-<h1>Yahoo Finance</h1>
-<a href="@Url.Action("Refresh","Finance")" class="btn btn-primary btn-lg">Refresh</a>
+    <h1>Yahoo Finance</h1>
+
+    <form asp-action="Index" class="d-flex justify-content-between">
+       <input type="text" name="search" placeholder="Search by date">
+        &ensp;
+       <input class="btn btn-primary btn-lg" type="submit" value="Filter" />
+    </form>
+
+    <a href="@Url.Action("Refresh","Finance")" class="btn btn-primary btn-lg">Refresh</a>
 </div>
+
 <br />
+
 <div class="d-flex flex-column">
     @if (TempData["Info"] != null)
     {
@@ -40,6 +49,7 @@
         @foreach (var item in Model)
         {
             <tr width="50%">
+                <th>@item.Ticker</th>
                 <th>@item.CompanyName</th>
                 <th>@item.MarketCap</th>
                 <th>@item.YearFounded</th>
@@ -52,5 +62,4 @@
             </tr>
         }
     </tbody>
-
 </table>

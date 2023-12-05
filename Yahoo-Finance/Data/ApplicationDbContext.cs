@@ -9,5 +9,5 @@ public class ApplicationDbContext : DbContext
     {
     }
 
-    public DbSet<Finance> Finances { get; set; }
+    public DbSet<Finances> Finances { get; set; }
 }

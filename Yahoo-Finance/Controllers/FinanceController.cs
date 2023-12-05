@@ -16,17 +16,25 @@ public class FinanceController : Controller
         _finance = finance;
     }
 
-    public ActionResult Index()
+    public ActionResult Index(string dateSearch)
     {
-        IEnumerable<Finance> finances = _context.Finances;
+        IEnumerable<Finances> finances = _context.Finances;
+        
+        if (!string.IsNullOrEmpty(dateSearch))
+        {
+            if (DateTime.TryParse(dateSearch, out var dateTime))
+            {
+                finances = finances.Where(x => x.DateAndTime.ToString() == dateTime.ToString()).ToList();
+            }
+        }
+
         return View(finances);
     }
 
     public async Task<IActionResult> Refresh()
     {
-        var value = _finance.GetFinanceInformation();
-        var message = _finance.AddFinanceInformation(value);
-
+        var data = _finance.GetFinanceInformationTicker();
+        var message = _finance.AddFinanceInformationTicker(data);
         TempData["Info"] = message;
         return RedirectToAction("Index");
     }
