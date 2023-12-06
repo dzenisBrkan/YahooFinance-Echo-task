@@ -16,15 +16,19 @@ public class FinanceController : Controller
         _finance = finance;
     }
 
-    public ActionResult Index(string dateSearch)
+    public ActionResult Index(string dateSearch, string tickerSearch)
     {
         IEnumerable<Finances> finances = _context.Finances;
         
-        if (!string.IsNullOrEmpty(dateSearch))
+        if (!string.IsNullOrEmpty(dateSearch) || !string.IsNullOrEmpty(tickerSearch))
         {
             if (DateTime.TryParse(dateSearch, out var dateTime))
             {
                 finances = finances.Where(x => x.DateAndTime.ToString() == dateTime.ToString()).ToList();
+            }
+            else if (!string.IsNullOrEmpty(tickerSearch))
+            {
+                finances = finances.Where(x => x.Ticker == tickerSearch).ToList();
             }
         }
 

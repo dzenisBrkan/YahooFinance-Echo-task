@@ -7,9 +7,15 @@
     <h1>Yahoo Finance</h1>
 
     <form asp-action="Index" class="d-flex justify-content-between">
-       <input type="text" name="search" placeholder="Search by date">
+        <input type="text" name="dateSearch" placeholder="Search by date">
         &ensp;
-       <input class="btn btn-primary btn-lg" type="submit" value="Filter" />
+        <input class="btn btn-primary btn-lg" type="submit" value="Filter" />
+    </form>
+
+    <form asp-action="Index" class="d-flex justify-content-between">
+        <input type="text" name="tickerSearch" placeholder="Search by ticker">
+        &ensp;
+        <input class="btn btn-primary btn-lg" type="submit" value="Filter" />
     </form>
 
     <a href="@Url.Action("Refresh","Finance")" class="btn btn-primary btn-lg">Refresh</a>
